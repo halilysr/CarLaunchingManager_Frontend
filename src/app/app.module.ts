@@ -8,6 +8,7 @@ import { NaviComponent } from './components/navi/navi.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AttendeeComponent } from './components/attendee/attendee.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
+import {HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { EventDetailComponent } from './components/event-detail/event-detail.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

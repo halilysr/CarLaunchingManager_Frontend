@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Attendee } from 'src/app/models/attendee';
+import { AttendeeService } from 'src/app/services/attendee.service';
 
 @Component({
   selector: 'app-attendee',
@@ -8,14 +9,18 @@ import { Attendee } from 'src/app/models/attendee';
 })
 export class AttendeeComponent implements OnInit {
 
-  attendees:Attendee[]=[{attendeeId:"1",attendeeName:"Dogan Kabak",attendeeJob:"Journalist",attendeeNationality:"Turkey"},
-  {attendeeId:"1",attendeeName:"Dogan Kabak",attendeeJob:"Journalist",attendeeNationality:"Turkey"},
-  {attendeeId:"2",attendeeName:"Burak Ertem",attendeeJob:"Journalist",attendeeNationality:"Turkey"},
-  {attendeeId:"3",attendeeName:"Matt Watson",attendeeJob:"Journalist",attendeeNationality:"England"}];
+  attendees:Attendee[]=[];
 
-  constructor() { }
+  constructor(private attendeeService:AttendeeService) { }
 
   ngOnInit() {
+    this.getAttendees();
   }
 
+  getAttendees(){
+
+    this.attendeeService.getAttendes().subscribe((response)=>{
+      this.attendees = response.data;
+    })
+  }
 }
