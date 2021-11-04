@@ -1,9 +1,9 @@
 
 export interface DashboardItem{
     
- id:number;
+ eventId:number;
  carName:string;
  date:string;
- destination:string;
- attendeesCount:string;
+ countryName:string;
+ destinationName:string;
 }

@@ -17,8 +17,5 @@ export class AttendeeService {
   getAttendes():Observable<ListResponseModel<Attendee>>
   {
       return this.httpClient.get<ListResponseModel<Attendee>>(this.apiUrl);
-
   }
-
-
 }
