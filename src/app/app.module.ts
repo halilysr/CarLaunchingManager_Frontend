@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,9 @@ import { NaviComponent } from './components/navi/navi.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AttendeeComponent } from './components/attendee/attendee.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { CreateEventComponent } from './components/create-event/create-event.component';
+
 
 
 @NgModule({
@@ -17,14 +20,17 @@ import {HttpClientModule} from '@angular/common/http'
     NaviComponent,
     DashboardComponent,
     AttendeeComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    CreateEventComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
