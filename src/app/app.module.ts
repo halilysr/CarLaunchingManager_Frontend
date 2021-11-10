@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { AttendeeComponent } from './components/attendee/attendee.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateEventComponent } from './components/create-event/create-event.component';
+import { PhotofilterbycarPipe } from './pipes/photofilterbycar.pipe';
 
 
 
@@ -22,6 +23,7 @@ import { CreateEventComponent } from './components/create-event/create-event.com
     AttendeeComponent,
     EventDetailComponent,
     CreateEventComponent,
+    PhotofilterbycarPipe,
     
     
   ],
@@ -30,7 +32,7 @@ import { CreateEventComponent } from './components/create-event/create-event.com
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
