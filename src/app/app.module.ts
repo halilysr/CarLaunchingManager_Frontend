@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -11,8 +10,10 @@ import { AttendeeComponent } from './components/attendee/attendee.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateEventComponent } from './components/create-event/create-event.component';
-
-
+import { LoginComponent } from './components/login/login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule, MatButton } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -22,15 +23,19 @@ import { CreateEventComponent } from './components/create-event/create-event.com
     AttendeeComponent,
     EventDetailComponent,
     CreateEventComponent,
-    
-    
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
