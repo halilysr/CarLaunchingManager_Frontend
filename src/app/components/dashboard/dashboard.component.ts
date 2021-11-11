@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Attendee } from 'src/app/models/attendee';
 import { DashboardItem } from 'src/app/models/dashboardItem';
 import { Photo } from 'src/app/models/photo';
@@ -22,7 +23,7 @@ export class DashboardComponent implements OnInit {
   filteredPhotos:Photo[];
 
   
-  constructor(private dashboardservice:DashboardService,private photoService:PhotoService) { }
+  constructor(private dashboardservice:DashboardService,private photoService:PhotoService,private router: Router,) { }
 
   ngOnInit(): void {
     this.getEvents();
@@ -48,6 +49,7 @@ export class DashboardComponent implements OnInit {
     this.filteredPhotos  = this.photos.filter(photo=>photo.carId == carId);
     
   }
+
 
   
 

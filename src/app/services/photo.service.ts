@@ -18,6 +18,13 @@ export class PhotoService {
     return this.httpClient.get<ListResponseModel<Photo>>(newPath);
   }
 
+  getPhotosByCarId(id:number): Observable<ListResponseModel<Photo>> {
+    let newPath = this.apiUrl + 'getphotosbycarid?carId='+id;
+    return this.httpClient.get<ListResponseModel<Photo>>(newPath);
+  }
+
+
+ 
   
 
 

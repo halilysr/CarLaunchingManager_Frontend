@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'attendees',component:AttendeeComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'create',component:CreateEventComponent},
-  {path:'events/:id',component:EventDetailComponent},
+  {path:'events/:eventId/:id',component:EventDetailComponent},
   {path:'',redirectTo:'dashboard',pathMatch:'full'},
   {path:'**',redirectTo:'attendees',pathMatch:'full'}
 
