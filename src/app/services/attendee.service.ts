@@ -9,6 +9,7 @@ import { ListResponseModel } from '../models/listResponseModel';
 })
 export class AttendeeService {
 
+  
 
   apiUrl:string ="https://localhost:44366/api/Attendees/getall"
 

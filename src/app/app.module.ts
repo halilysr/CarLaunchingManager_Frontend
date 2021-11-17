@@ -14,6 +14,8 @@ import { LoginComponent } from './components/login/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule, MatButton } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { PhotofilterbycarPipe } from './pipes/photofilterbycar.pipe';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
     EventDetailComponent,
     CreateEventComponent,
     LoginComponent,
+    PhotofilterbycarPipe,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
