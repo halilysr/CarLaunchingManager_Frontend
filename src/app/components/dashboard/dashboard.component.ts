@@ -67,6 +67,7 @@ export class DashboardComponent implements OnInit {
     this.dashboardservice.getEvents().subscribe((response) => {
       this.items = response.data;
       this.filteredItems = response.data;
+      console.log(this.items)
     });
   }
 

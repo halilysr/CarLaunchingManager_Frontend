@@ -13,6 +13,7 @@ import { EventDetailComponent } from './components/event-detail/event-detail.com
 import {HttpClientModule} from '@angular/common/http';
 import { CreateEventComponent } from './components/create-event/create-event.component';
 import { PhotofilterbycarPipe } from './pipes/photofilterbycar.pipe';
+import { PhotofilterbyattendeePipe } from './pipes/photofilterbyattendee.pipe';
 
 
 
@@ -25,6 +26,7 @@ import { PhotofilterbycarPipe } from './pipes/photofilterbycar.pipe';
     EventDetailComponent,
     CreateEventComponent,
     PhotofilterbycarPipe,
+    PhotofilterbyattendeePipe,
     
     
   ],
