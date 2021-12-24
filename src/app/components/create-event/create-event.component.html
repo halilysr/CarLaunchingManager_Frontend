@@ -1,13 +1,9 @@
 <div class="container-fluid">
   <div class="row">
-<<<<<<< HEAD
-    <div class="col-9">
-=======
+  
+
     <h2 class="mt-4 mb-4">Create Event </h2>
     <div class="col-7">
-
-
->>>>>>> 36f0c1eb19854f517fb4af4a4803845c7600fda2
 
       <ngb-carousel  *ngIf="filteredPhotos" style="height: 700px; width: 700px">
         <ng-template  ngbSlide *ngFor="let photo of filteredPhotos" >
@@ -23,7 +19,7 @@
         </ng-template>
       </ngb-carousel>
     </div>
-    <div class="col-3">
+    <div class="col-5">
       <form novalidate [formGroup]="eventForm" (ngSubmit)="save()">
         <fieldset>
           <legend>Legend</legend>
@@ -94,5 +90,5 @@
 
       
     </div>
-  </div>
+ 
 </div>
