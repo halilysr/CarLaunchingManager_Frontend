@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { CreateEventComponent } from './components/create-event/create-event.component';
 import { PhotofilterbycarPipe } from './pipes/photofilterbycar.pipe';
 import { PhotofilterbyattendeePipe } from './pipes/photofilterbyattendee.pipe';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 
 
@@ -27,6 +28,7 @@ import { PhotofilterbyattendeePipe } from './pipes/photofilterbyattendee.pipe';
     CreateEventComponent,
     PhotofilterbycarPipe,
     PhotofilterbyattendeePipe,
+    FeedbackComponent,
     
     
   ],
