@@ -9,3 +9,15 @@
 .container > * {
     width: 40%;
 }
+.container > * {
+    margin-top: 30px;
+}
+.help-block { display: none; }
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+input.ng-valid.ng-touched{
+    border: 1px solid green;
+}
+label { display: block; width: 10px;  }
