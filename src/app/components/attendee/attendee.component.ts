@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Attendee } from 'src/app/models/attendee';
+import { AttendeePhoto } from 'src/app/models/attendeePhoto';
+import { AttendeePhotoService } from 'src/app/services/attendee-photo.service';
 import { AttendeeService } from 'src/app/services/attendee.service';
 
 @Component({
@@ -10,17 +12,25 @@ import { AttendeeService } from 'src/app/services/attendee.service';
 export class AttendeeComponent implements OnInit {
 
   attendees:Attendee[]=[];
-
-  constructor(private attendeeService:AttendeeService) { }
+  photos:AttendeePhoto[]=[];
+  constructor(private attendeeService:AttendeeService,private photoService:AttendeePhotoService) { }
 
   ngOnInit() {
     this.getAttendees();
+    this.getPhotos();
   }
 
   getAttendees(){
 
     this.attendeeService.getAttendes().subscribe((response)=>{
       this.attendees = response.data;
+    })
+  }
+
+  getPhotos(){
+    this.photoService.getAll().subscribe((response)=>{
+      this.photos = response.data;
+      console.log(response.data)
     })
   }
 }

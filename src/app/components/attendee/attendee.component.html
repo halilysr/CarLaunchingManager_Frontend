@@ -1,23 +1,105 @@
+<!--
 <div class="row">
   <div class="col-lg-12">
       <div class="row row-grid align-items-center">
-          <div class="col-lg-4 col-sm-6 px-2" *ngFor="let attendee of attendees">
-              <div class="card shadow shadow-lg--hover mt-3"  >
-                  
-                      <div >
-                          <div class="d-flex px-1">
-                              <div>
-                                  <img src="./assets/img.jpg" alt="Raised image" class="img-fluid rounded m-1" style="height: 300px;" >
-                                  <small class="text-muted font-weight-bold">{{attendee.attendeeName}} </small><br>
-                                  <small class="text-muted"> {{attendee.attendeeJob}} </small><br>
-                                  <small class="text-muted"> {{attendee.attendeeNationality}} </small><br>
-                                  
-                              </div>
-                          </div>
-                      </div>
-                  
+        <h3 class="mt-4">Attendees</h3>  
+        <div class="col-lg-4 col-sm-6 px-2" *ngFor="let attendee of attendees">
+             
+
+              <div class="card mb-3 mt-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                  <rect width="100%" height="100%" fill="#868e96"></rect>
+                  <text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image </text>
+                </svg>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{attendee.attendeeName}}</li>
+                  <li class="list-group-item">{{attendee.attendeeJob}}</li>
+                  <li class="list-group-item">{{attendee.attendeeNationality}}</li>
+                </ul>
               </div>
           </div>
       </div>
   </div>
 </div>
+
+ -->
+<div class="container-fluid">
+  
+  <div class="row mt-5">
+    <h1 class="mb-5">Attendees</h1>
+    <div class="container-fluid">
+      <div class="col-lg-12">
+        <div class="row row-grid align-items-center">
+          <div class="col-lg-4 col-sm-6 px-2" *ngFor="let attendee of attendees">
+            <div class="card shadow shadow-lg--hover mt-3 mr-5">
+              <div>
+                <div class="d-flex px-1">
+                  <div>
+                    <div>
+                      <ngb-carousel
+                        class="mb-2"
+                        style="height: 100%; width: 100%"
+                      >
+                        <ng-template
+                          ngbSlide
+                          *ngFor="
+                            let photo of photos | photofilterbyattendee: attendee.attendeeId
+                          "
+                        >
+                          <div class="picsum-img-wrapper">
+                            <img
+                              [src]="photo.url"
+                              alt="Angular Carousel 1"
+                              style="height: 100%; width: 100%; cursor: pointer"
+                              
+                            />
+                          </div>
+                        </ng-template>
+                      </ngb-carousel>
+                      <ul class="list-group">
+                        <li
+                          class="
+                            list-group-item
+                            d-flex
+                            justify-content-between
+                            align-items-center
+                          "
+                        >
+                        {{attendee.attendeeName}}
+                        </li>
+                        <li
+                          class="
+                            list-group-item
+                            d-flex
+                            justify-content-between
+                            align-items-center
+                          "
+                        >
+                        {{attendee.attendeeJob}}
+                        </li>
+                        <li
+                          class="
+                            list-group-item
+                            d-flex
+                            justify-content-between
+                            align-items-center
+                          "
+                        >
+                        {{attendee.attendeeNationality}}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ---------------------------------------------------------------->
