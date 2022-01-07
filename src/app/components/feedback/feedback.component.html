@@ -1,1 +1,46 @@
-<p>feedback works!</p>
+<div class="container-fluid">
+    
+  <h4 class="mb-4 mt-2">Feedbacks</h4>
+  <div class="row mb-2">
+    <div class="col-6">
+      <form>
+        <select class="form-select " placeholder="Please Select Car Model">
+          <option selected></option>
+          <option *ngFor="let car of cars">{{car.carName}}</option>
+        </select>
+      </form>
+    </div>
+    <div class="col-6">
+      <form>
+        <select class="form-select " placeholder="Please Select Car Model">
+          <option selected></option>
+          <option *ngFor="let destination of destinations">{{destination.destinationName}}</option>
+        </select>
+      </form>
+    </div>
+    
+  </div>
+
+  <div class="card mb-2">
+    <div class="card-body">
+      <h4 class="card-title">C-180</h4>
+      <p class="card-text">It was a great event</p>
+      <h6 class="card-subtitle mb-2 text-muted">Burak Ertem</h6>
+    </div>
+  </div>
+  <div class="card mb-2">
+    <div class="card-body">
+      <h4 class="card-title">C-180</h4>
+      <p class="card-text">It was a great event</p>
+      <h6 class="card-subtitle mb-2 text-muted">Burak Ertem</h6>
+    </div>
+  </div>
+  <div class="card mb-2">
+    <div class="card-body">
+      <h4 class="card-title">C-180</h4>
+      <p class="card-text">It was a great event</p>
+      <h6 class="card-subtitle mb-2 text-muted">Burak Ertem</h6>
+    </div>
+  </div>
+
+</div>

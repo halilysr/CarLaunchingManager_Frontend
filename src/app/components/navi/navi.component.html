@@ -1,22 +1,57 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid" >
-    
-    <a class="navbar-brand" href="#">Daimler</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-inverse">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"
+      ><img src="./assets/logoo.png" alt="" class="img-responsive logo"
+    /></a>
 
-
-    <div class="collapse navbar-collapse"  id="navbarColor02">
+    <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
-
         <li class="nav-item">
-          <a class="nav-link" href="#" [routerLink]="['/attendees']" routerLinkActive="router-link-active" >Attendee</a>
+          <a
+            class="nav-link"
+            href="#"
+            [routerLink]="['/attendees']"
+            routerLinkActive="router-link-active"
+            >Attendee</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" [routerLink]="['/create']" routerLinkActive="router-link-active"  >Create Event</a>
+          <a
+            class="nav-link"
+            href="#"
+            [routerLink]="['/create']"
+            routerLinkActive="router-link-active"
+            >Create Event</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            [routerLink]="['/feedback']"
+            routerLinkActive="router-link-active"
+            >Feedbacks</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            [routerLink]="['/login']"
+            routerLinkActive="router-link-active"
+            >Login</a
+          >
         </li>
       </ul>
     </div>
     <div>
-      <a class="nav-link" href="#"[routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="navbar-brand" href="#"
+            ><img src="./assets/sdc.jpeg" alt="" class="img-responsive logo"
+          /></a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
 import { CreateEventComponent } from './components/create-event/create-event.component';
 import { LoginComponent } from './components/login/login/login.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 const routes: Routes = [
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'login',component:LoginComponent},
   {path:'create',component:CreateEventComponent},
+  {path:'feedback',component:FeedbackComponent},
   {path:'events/:eventId/:id',component:EventDetailComponent},
   {path:'',redirectTo:'dashboard',pathMatch:'full'},
   {path:'**',redirectTo:'attendees',pathMatch:'full'},

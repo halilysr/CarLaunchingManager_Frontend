@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateStruct,NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DestinationService } from 'src/app/services/destination.service';
 import { CountryService } from 'src/app/services/country.service';
@@ -32,6 +32,9 @@ export class CreateEventComponent implements OnInit {
   photos: Photo[];
   filteredPhotos: Photo[];
 
+  model: NgbDateStruct;
+  date: {year: number, month: number};
+
   myImgUrl='assets/mallorca1.jpg';
 
   constructor(
@@ -39,7 +42,8 @@ export class CreateEventComponent implements OnInit {
     private destinationService: DestinationService,
     private countryService: CountryService,
     private carService:CarService,
-    private photoService:PhotoService
+    private photoService:PhotoService,
+    private calendar: NgbCalendar
   ) {}
 
 
@@ -92,6 +96,7 @@ export class CreateEventComponent implements OnInit {
 
   save() {
     console.log(this.eventForm);
+    console.log(this.date)
   }
 
   //on Country Change
@@ -114,6 +119,10 @@ export class CreateEventComponent implements OnInit {
 
     //this.filteredDestinations=dest;
     console.log(this.filteredDestinations);
+  }
+
+  selectToday() {
+    this.model = this.calendar.getToday();
   }
 
   onCarModelChange($event:any){

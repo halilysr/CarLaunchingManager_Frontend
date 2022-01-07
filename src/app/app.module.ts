@@ -14,6 +14,10 @@ import { LoginComponent } from './components/login/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule, MatButton } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker'; 
+import { MatNativeDateModule } from '@angular/material/core'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { PhotofilterbyattendeePipe } from './pipes/photofilterbyattendee.pipe';
 import { FeedbackComponent } from './components/feedback/feedback.component';
@@ -47,7 +51,10 @@ import { PhotofilterbycarPipe } from './pipes/photofilterbycar.pipe';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
- 
+    
+    MatDatepickerModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
 
     ReactiveFormsModule,
     FormsModule
