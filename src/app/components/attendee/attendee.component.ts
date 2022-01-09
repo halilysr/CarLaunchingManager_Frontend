@@ -13,6 +13,7 @@ export class AttendeeComponent implements OnInit {
 
   attendees:Attendee[]=[];
   photos:AttendeePhoto[]=[];
+  currentAttendee:Attendee;
   constructor(private attendeeService:AttendeeService,private photoService:AttendeePhotoService) { }
 
   ngOnInit() {
@@ -24,7 +25,9 @@ export class AttendeeComponent implements OnInit {
 
     this.attendeeService.getAttendes().subscribe((response)=>{
       this.attendees = response.data;
-    })
+    },(error=>{
+      console.error(error);
+    }))
   }
 
   getPhotos(){
@@ -33,4 +36,6 @@ export class AttendeeComponent implements OnInit {
       console.log(response.data)
     })
   }
+
+
 }

@@ -16,9 +16,8 @@
 
 <div class="row">
   <div class="col-4">
-    
     <ngb-carousel style="height: 100%; width: 100%">
-      <ng-template ngbSlide *ngFor="let photo of photos" >
+      <ng-template ngbSlide *ngFor="let photo of photos">
         <div class="picsum-img-wrapper">
           <img
             [src]="photo.url"
@@ -31,51 +30,24 @@
   </div>
   <div class="col-8">
     <ul class="list-group">
-
       <li
-        class="
-          list-group-item
-          d-flex
-          justify-content-between
-          align-items-center
-          mb-5
-          
-        "
-        (click) ="log()"
-        
+        class="list-group-item d-flex justify-content-between align-items-center mb-5"
+        (click)="log()"
       >
         Mallorca
       </li>
       <li
-      class="
-        list-group-item
-        d-flex
-        justify-content-between
-        align-items-center
-        mb-5
-        
-      "
-    >
-      Spain
-    </li>
+        class="list-group-item d-flex justify-content-between align-items-center mb-5"
+      >
+        Spain
+      </li>
       <li
-        class="
-          list-group-item
-          d-flex
-          justify-content-between
-          align-items-center
-          mb-5
-          "
+        class="list-group-item d-flex justify-content-between align-items-center mb-5"
       >
         22.01.22
       </li>
       <li
-        class="
-          list-group-item
-          d-flex
-          justify-content-between
-          align-items-center
-        "
+        class="list-group-item d-flex justify-content-between align-items-center"
       >
         400 Attendees
       </li>
@@ -114,19 +86,92 @@
               <th scope="col">Name</th>
               <th scope="col">Job</th>
               <th scope="col">Nationality</th>
+              <th scope="col">Add</th>
+              >
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let attendee of attendees">
               <th scope="row">{{ attendee.attendeeId }}</th>
-              <td [routerLink]="['/attende']" routerLinkActive="router-link-active" >{{ attendee.attendeeName }}</td>
+              <td
+                [routerLink]="['/attende']"
+                routerLinkActive="router-link-active"
+              >
+                {{ attendee.attendeeName }}
+              </td>
               <td>{{ attendee.attendeeJob }}</td>
               <td>{{ attendee.attendeeNationality }}</td>
+              <td>
+                <button
+                  (click)="onAdd(attendee)"
+                  type="button"
+                  class="btn btn-light"
+                >
+                  Add
+                </button>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+        <!--
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">id</th>
+              <th scope="col">id</th>
+              <th scope="col">id</th>
+              <th scope="col">Delete</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let invitee of invitees">
+              <th scope="row">{{ invitee.inviteeId }}</th>
+              <td>{{ invitee.attendeeId }}</td>
+              <td>{{ invitee.eventId }}</td>
+              <td><button type="button" class="btn btn-light">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+        -->
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-1" title="Attendee List ">
+      <ng-template ngbPanelContent>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Job</th>
+              <th scope="col">Nationality</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let attendee of eventAttendees">
+              <td
+                [routerLink]="['/attende']"
+                routerLinkActive="router-link-active"
+              >
+                {{ attendee.attendeeName }}
+              </td>
+              <td>{{ attendee.attendeeJob }}</td>
+              <td>{{ attendee.attendeeNationality }}</td>
+              <td>
+                <button
+                  (click)="onDelete(attendee)"
+                  type="button"
+                  class="btn btn-light"
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
       </ng-template>
     </ngb-panel>
   </ngb-accordion>
-  
 </div>

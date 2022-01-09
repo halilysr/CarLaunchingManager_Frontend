@@ -3,6 +3,7 @@ import { HttpClient } from  '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Attendee } from '../models/attendee';
 import { ListResponseModel } from '../models/listResponseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,21 @@ export class AttendeeService {
 
   
 
-  apiUrl:string ="https://localhost:44366/api/Attendees/getall"
+  apiUrl:string ="https://localhost:44366/api/Attendees/"
 
   constructor(private httpClient:HttpClient) { }
 
   getAttendes():Observable<ListResponseModel<Attendee>>
   {
-      return this.httpClient.get<ListResponseModel<Attendee>>(this.apiUrl);
+    let newUrl = this.apiUrl + "getall";
+      return this.httpClient.get<ListResponseModel<Attendee>>(newUrl);
+  }
+
+  getByid(id:number):Observable<SingleResponseModel<Attendee>>{
+
+
+    //getbyattendeeid?id=1
+    let newUrl = this.apiUrl + "getbyattendeeid?id="+id;
+    return this.httpClient.get<SingleResponseModel<Attendee>>(newUrl);
   }
 }
