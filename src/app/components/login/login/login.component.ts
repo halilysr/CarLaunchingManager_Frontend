@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { Login } from 'src/app/models/login';
 
 @Component({
   selector: 'app-login',
@@ -37,15 +38,35 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.invalid){
       return;
     }
-    let loginModel = Object.assign({},this.loginForm.value);
+    //let loginModel = Object.assign({},this.loginForm.value);
+    let email = this.loginForm.controls['email'].value;
+    let password = this.loginForm.controls['password'].value;
+    let loginModel:Login = {email:email,password:password}
+  
     this.authService.login(loginModel).subscribe(response => {
+      
       console.log(response)
+      console.log("girdi")
       localStorage.setItem("token",response.data.token)
-      this.router.navigate(['home']);
+      console.log("girdi2")
+      this.router.navigate(['dashboard']);
+      console.log("girdi3")
+      
     },responseError=>{
       console.log(responseError)
     })
 
+    
+
+  }
+
+  isAuthenticated(){
+    if(localStorage.getItem("token")){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
 }
