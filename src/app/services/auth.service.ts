@@ -19,6 +19,14 @@ constructor(private httpClient:HttpClient) { }
     return this.httpClient.post<SingleResponseModel<Token>>(this.apiUrl+ "login" ,login)
   }
 
+  isAuthenticated(){
+    if(localStorage.getItem("token")){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
 
 

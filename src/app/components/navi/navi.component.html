@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-inverse">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"
+    <a class="navbar-brand" href="/dashboard"
       ><img src="./assets/logoo.png" alt="" class="img-responsive logo"
     /></a>
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"  *ngIf="token">
+        <li class="nav-item" *ngIf="token">
           <a
             class="nav-link"
             href="#"
@@ -32,7 +32,12 @@
             >Feedbacks</a
           >
         </li>
-        <li class="nav-item" *ngIf="!token">
+      </ul>
+    </div>
+
+    <div>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item mr-2 mt-2" *ngIf="!token">
           <a
             class="nav-link"
             href="#"
@@ -41,22 +46,17 @@
             >Login</a
           >
         </li>
-        <li class="nav-item" *ngIf="token" >
+        <li class="nav-item mr-2 mt-2" *ngIf="token">
           <a
             class="nav-link"
             href="#"
-            (click)='logout()'
+            (click)="logout()"
             routerLinkActive="router-link-active"
             >Logout</a
           >
         </li>
-      </ul>
-    </div>
-  
-    <div>
-      <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="navbar-brand" href="#"
+          <a class="navbar-brand" 
             ><img src="./assets/sdc.jpeg" alt="" class="img-responsive logo"
           /></a>
         </li>

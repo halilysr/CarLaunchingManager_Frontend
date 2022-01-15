@@ -6,17 +6,18 @@ import { EventDetailComponent } from './components/event-detail/event-detail.com
 import { CreateEventComponent } from './components/create-event/create-event.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
 
-  {path:'attendees',component:AttendeeComponent},
-  {path:'dashboard',component:DashboardComponent},
+  {path:'attendees',component:AttendeeComponent,canActivate:[AuthGuard]},
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
   {path:'login',component:LoginComponent},
-  {path:'create',component:CreateEventComponent},
-  {path:'feedback',component:FeedbackComponent},
-  {path:'events/:eventId/:id',component:EventDetailComponent},
-  {path:'',redirectTo:'dashboard',pathMatch:'full'},
-  {path:'**',redirectTo:'dashboard',pathMatch:'full'},
+  {path:'create',component:CreateEventComponent,canActivate:[AuthGuard]},
+  {path:'feedback',component:FeedbackComponent,canActivate:[AuthGuard]},
+  {path:'events/:eventId/:id',component:EventDetailComponent,canActivate:[AuthGuard]},
+  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path:'**',redirectTo:'login',pathMatch:'full'},
   
 ];
 
