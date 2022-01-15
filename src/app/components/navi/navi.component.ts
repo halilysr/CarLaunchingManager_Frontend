@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class NaviComponent implements OnInit {
 
-  token:any;
+  token:any=null;
   constructor(private router: Router) { }
 
   ngOnInit(): void {

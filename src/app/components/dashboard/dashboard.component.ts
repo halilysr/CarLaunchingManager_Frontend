@@ -56,6 +56,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //window.location.reload();
     this.getEvents();
     this.getPhotos();
     this.getCountries();

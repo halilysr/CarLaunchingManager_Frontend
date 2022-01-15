@@ -49,12 +49,18 @@ export class LoginComponent implements OnInit {
       console.log("girdi")
       localStorage.setItem("token",response.data.token)
       console.log("girdi2")
-      this.router.navigate(['dashboard']);
+      ;
       console.log("girdi3")
       
     },responseError=>{
       console.log(responseError)
-    })
+    },(()=>{
+     // window.location.reload();
+      this.router.navigate(['dashboard']).then(() => {
+        window.location.reload();
+      })
+      
+    }))
 
     
 

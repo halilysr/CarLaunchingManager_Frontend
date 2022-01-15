@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'feedback',component:FeedbackComponent},
   {path:'events/:eventId/:id',component:EventDetailComponent},
   {path:'',redirectTo:'dashboard',pathMatch:'full'},
-  {path:'**',redirectTo:'attendees',pathMatch:'full'},
+  {path:'**',redirectTo:'dashboard',pathMatch:'full'},
   
 ];
 
