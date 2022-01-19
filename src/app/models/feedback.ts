@@ -1,10 +1,10 @@
 export interface Feedback{
-    feedbackId?:number,
-    eventId?:number,
-    attendeeId?:number,
-    carPoint?:number,
-    eventPoint?:number,
-    LocationPoint?:number,
-    avaragePoint?:number,
-    comment:string
+
+    feedbackId?:number;
+    eventId?:number;
+    eventPoint?:number;
+    carPoint?:number;
+    locationPoint?:number;
+    comment?:string;
+    attendeeId?:number;
 }

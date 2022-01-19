@@ -21,26 +21,12 @@
     
   </div>
 
-  <div class="card mb-2">
+  <div class="card mb-2" *ngFor = "let feedback of feedbacks">
     <div class="card-body">
-      <h4 class="card-title">C-180</h4>
-      <p class="card-text">It was a great event</p>
-      <h6 class="card-subtitle mb-2 text-muted">Burak Ertem</h6>
+      <h4 class="card-title">{{feedback.carName}}</h4>
+      <p class="card-text">{{feedback.comment}}</p>
+      <p class="card-text">{{feedback.rating}}</p>
+      <h6 class="card-subtitle mb-2 text-muted">{{feedback.attendeeName}}</h6>
     </div>
   </div>
-  <div class="card mb-2">
-    <div class="card-body">
-      <h4 class="card-title">C-180</h4>
-      <p class="card-text">It was a great event</p>
-      <h6 class="card-subtitle mb-2 text-muted">Burak Ertem</h6>
-    </div>
-  </div>
-  <div class="card mb-2">
-    <div class="card-body">
-      <h4 class="card-title">C-180</h4>
-      <p class="card-text">It was a great event</p>
-      <h6 class="card-subtitle mb-2 text-muted">Burak Ertem</h6>
-    </div>
-  </div>
-
-</div>
+  

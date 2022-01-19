@@ -1,6 +1,7 @@
 export interface Event{
     
-    carModel:string;
+    eventId:number
+    carId:number;
     country:string;
     destination:string;
     date:Date;
