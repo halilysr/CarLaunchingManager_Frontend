@@ -30,4 +30,11 @@ export class EventService {
     let newUrl = this.apiUrl + "getbyeventid?id="+id;
     return this.httpClient.get<SingleResponseModel<Event>>(newUrl);
   }
+
+  add(event:Event){
+    let newUrl = this.apiUrl + "add";
+
+    return this.httpClient.post(newUrl,event);
+
+  }
 }

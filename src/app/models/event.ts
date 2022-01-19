@@ -1,6 +1,6 @@
 export interface Event{
     
-    eventId:number
+    eventId?:number
     carId:number;
     country:string;
     destination:string;

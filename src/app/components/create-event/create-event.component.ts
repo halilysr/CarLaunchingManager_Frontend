@@ -9,6 +9,9 @@ import { Car } from 'src/app/models/car';
 import { Photo } from 'src/app/models/photo';
 import { CarService } from 'src/app/services/car.service';
 import { PhotoService } from 'src/app/services/photo.service';
+import { EventService } from 'src/app/services/event.service';
+import { Event } from 'src/app/models/event';
+
 
 @Component({
   selector: 'app-create-event',
@@ -43,7 +46,8 @@ export class CreateEventComponent implements OnInit {
     private countryService: CountryService,
     private carService:CarService,
     private photoService:PhotoService,
-    private calendar: NgbCalendar
+    private calendar: NgbCalendar,
+    private eventService:EventService,
   ) {}
 
 
@@ -95,8 +99,45 @@ export class CreateEventComponent implements OnInit {
   }
 
   save() {
+    
+    let carModel = this.eventForm.controls['carModel'].value;
+    let country = this.eventForm.controls['country'].value;
+    let destination = this.eventForm.controls['destination'].value;
+    let date:Date = new Date("2022-10-12");
+    let car:Car;
+    console.log(date);
+    this.carService.getByModel(carModel).subscribe(res=>{
+
+      //console.log(carModel);
+      car=res.data;
+    },(err=>{
+      console.log(err);
+    }),(()=>{
+
+      console.log(car)
+      let event:Event={eventId:undefined,carId:car.carId!,country:country,destination:destination,date:date};
+
+      console.log(event);
+      //this.createEvent(event);
+
+    }))
     console.log(this.eventForm);
-    console.log(this.date)
+    //console.log(this.date)
+  }
+
+  createEvent(event:Event){
+
+    this.eventService.add(event).subscribe(res=>{
+
+      console.log(res)
+    },(err=>{
+      console.log(err);
+    }),(()=>{
+
+
+
+
+    }))
   }
 
   //on Country Change

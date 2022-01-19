@@ -1,5 +1,5 @@
 export interface Car{
-    carId:number;
+    carId?:number;
     carName:string;
     year:string;
 }   
