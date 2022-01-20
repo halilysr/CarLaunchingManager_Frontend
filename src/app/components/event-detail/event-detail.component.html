@@ -138,7 +138,11 @@
         -->
       </ng-template>
     </ngb-panel>
-    <ngb-panel id="static-1" title="Attendee List ">
+
+  </ngb-accordion>
+
+  <ngb-accordion [closeOthers]="true" activeIds="static-1">
+    <ngb-panel id="static-1" title="Invitee List ">
       <ng-template ngbPanelContent>
         <table class="table">
           <thead>
@@ -174,4 +178,6 @@
       </ng-template>
     </ngb-panel>
   </ngb-accordion>
+
+
 </div>
